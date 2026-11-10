@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_daeefebaaa87394685fbfc44c4bd500e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_daeefebaaa87394685fbfc44c4bd500e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_daeefebaaa87394685fbfc44c4bd500e = L.map(
+                "map_daeefebaaa87394685fbfc44c4bd500e",
+                {
+                    center: [0.0, 130.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 3,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c205c333e9abe57d5d21c3af331803c7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c205c333e9abe57d5d21c3af331803c7.addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Full Screen",
+  "titleCancel": "Exit Full Screen",
+  "forceSeparateButton": false,
+}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+            var tile_layer_2aadea63a70e87d6b0afc53e2bd7e9e1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_5ec196ffbe90dfccc6d19d405b6e1dd9 = new L.Control.MiniMap(
+                tile_layer_2aadea63a70e87d6b0afc53e2bd7e9e1,
+                {
+  "position": "bottomleft",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": false,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_daeefebaaa87394685fbfc44c4bd500e.addControl(mini_map_5ec196ffbe90dfccc6d19d405b6e1dd9);
+        
+    
+            var circle_marker_81ab55f219269be327da7647d3b42d62 = L.circleMarker(
+                [10.629, 103.6336],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 41.93830856138658, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_35e5f4de556871d0593d9cc8f4b2d791 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4848d6eee7c8dbb7805f2e35c7cd817a = $(`<div id="html_4848d6eee7c8dbb7805f2e35c7cd817a" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Cambodia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Sihanoukville Special Economic Zone (SSEZ)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> SEZ / overseas economic & trade cooperation zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Jiangsu Taihu / Hongdou-linked Chinese consortium; SSEZ Co.</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Cambodia International Investment Development Group and Cambodian authorities</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Manufacturing, light industry, logistics; newer EV tenant interest</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 100000000.0</p> </div>     </div>`)[0];
+                popup_35e5f4de556871d0593d9cc8f4b2d791.setContent(html_4848d6eee7c8dbb7805f2e35c7cd817a);
+            
+        
+
+        circle_marker_81ab55f219269be327da7647d3b42d62.bindPopup(popup_35e5f4de556871d0593d9cc8f4b2d791)
+        ;
+
+        
+    
+    
+            var circle_marker_e8b9a46a9bf005337bbd95bcc9470a11 = L.circleMarker(
+                [10.1942, 103.2667],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_ad387d5d5260713526044d7de90b7f18 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0a52fece21f761a8f5c8c38a18a96c51 = $(`<div id="html_0a52fece21f761a8f5c8c38a18a96c51" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Cambodia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Dara Sakor / Cambodia-China Comprehensive Investment and Development Pilot Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Coastal development zone / tourism-industrial platform</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> High-risk / contested</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Union Development Group (UDG)</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Cambodian central and provincial authorities; concession structure</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Tourism, real estate, airport/port-adjacent development, possible industrial/commercial functions</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_ad387d5d5260713526044d7de90b7f18.setContent(html_0a52fece21f761a8f5c8c38a18a96c51);
+            
+        
+
+        circle_marker_e8b9a46a9bf005337bbd95bcc9470a11.bindPopup(popup_ad387d5d5260713526044d7de90b7f18)
+        ;
+
+        
+    
+    
+            var circle_marker_8276ce061870199a6230b07ff5e147ac = L.circleMarker(
+                [10.9322, 105.1819],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_944669f41647b5d6fb98d3c67be34b41 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_20bc3a6534da754d8041187d0c659198 = $(`<div id="html_20bc3a6534da754d8041187d0c659198" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Cambodia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Lancang-Mekong Cooperation (Cambodia phase)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Logistics, public health, green technology, tourism </p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Ongoing </p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> 113 projects signed between Cambodia and China </p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_944669f41647b5d6fb98d3c67be34b41.setContent(html_20bc3a6534da754d8041187d0c659198);
+            
+        
+
+        circle_marker_8276ce061870199a6230b07ff5e147ac.bindPopup(popup_944669f41647b5d6fb98d3c67be34b41)
+        ;
+
+        
+    
+    
+            var circle_marker_9c2a71d5623cddec2c22101449bbf5f2 = L.circleMarker(
+                [18.0168, 102.7605],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 44.85460678469179, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_a4724d48867f10347fc1392ef163ce50 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5c9b3e32ad9505abfb276cf1dfa0d5d5 = $(`<div id="html_5c9b3e32ad9505abfb276cf1dfa0d5d5" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Laos</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Vientiane Saysettha Development Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> SEZ / overseas economic & trade cooperation zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Yunnan Provincial Overseas Investment / Yunnan Construction & Investment Holding</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Vientiane municipal government; Lao-China JV reportedly 75% Chinese / 25% Lao</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Industrial park, logistics, green township, electronics, machinery, agriculture processing</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 360000000.0</p> </div>     </div>`)[0];
+                popup_a4724d48867f10347fc1392ef163ce50.setContent(html_5c9b3e32ad9505abfb276cf1dfa0d5d5);
+            
+        
+
+        circle_marker_9c2a71d5623cddec2c22101449bbf5f2.bindPopup(popup_a4724d48867f10347fc1392ef163ce50)
+        ;
+
+        
+    
+    
+            var circle_marker_339ea4e03560d47c4351a599e06336b4 = L.circleMarker(
+                [20.3402, 100.1052],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_3ee68cd89da7112d351552a427a83d22 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a524f4ae7f331d0349fc26c021b69fe0 = $(`<div id="html_a524f4ae7f331d0349fc26c021b69fe0" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Laos</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Golden Triangle Special Economic Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Border SEZ / casino-tourism enclave</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> High-risk / contested</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Kings Romans Group / Zhao Wei-linked network</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Lao government concession</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Casino tourism, real estate, border trade; reported illicit-economy concerns</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_3ee68cd89da7112d351552a427a83d22.setContent(html_a524f4ae7f331d0349fc26c021b69fe0);
+            
+        
+
+        circle_marker_339ea4e03560d47c4351a599e06336b4.bindPopup(popup_3ee68cd89da7112d351552a427a83d22)
+        ;
+
+        
+    
+    
+            var circle_marker_4588a3dadba444818149041f4cd09b0f = L.circleMarker(
+                [13.9614, 105.9228],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_da4555aee7e28fc7c608ecd69d2210bb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_103e694618eb02f174e43378d7ccbf71 = $(`<div id="html_103e694618eb02f174e43378d7ccbf71" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Laos</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Siphandone Special Economic Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Tourism / digital hub SEZ</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Planned / stalled</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Hong Kong-based Chinese investors reported in media; Sithandone Joint Development reference</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Lao authorities</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Tourism, digital services, island development</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_da4555aee7e28fc7c608ecd69d2210bb.setContent(html_103e694618eb02f174e43378d7ccbf71);
+            
+        
+
+        circle_marker_4588a3dadba444818149041f4cd09b0f.bindPopup(popup_da4555aee7e28fc7c608ecd69d2210bb)
+        ;
+
+        
+    
+    
+            var circle_marker_69f4486f3d6de982d1a70345277811a0 = L.circleMarker(
+                [19.3664, 93.6844],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_a8cd08771eb4a797af9e264243a0ca43 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_be5272a0ced3d1293c159dc51346eb03 = $(`<div id="html_be5272a0ced3d1293c159dc51346eb03" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Myanmar</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Kyaukphyu SEZ and deep-sea port</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> SEZ / port-logistics-industrial platform</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> High-risk / contested</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> CITIC-led consortium; CITIC Myanmar Port Investment reportedly 70% in port JV</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Myanmar government / Kyaukphyu SEZ Management Committee</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Port, logistics, energy corridor, industrial development</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_a8cd08771eb4a797af9e264243a0ca43.setContent(html_be5272a0ced3d1293c159dc51346eb03);
+            
+        
+
+        circle_marker_69f4486f3d6de982d1a70345277811a0.bindPopup(popup_a8cd08771eb4a797af9e264243a0ca43)
+        ;
+
+        
+    
+    
+            var circle_marker_78cdf6c8ac7ea522cd8049d74c61681f = L.circleMarker(
+                [20.3544, 100.0847],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_5a1a65a8c41cc0b5ac7f57fef05f29ee = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5cf57aaa25fa40404d82f64417600aea = $(`<div id="html_5cf57aaa25fa40404d82f64417600aea" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Myanmar</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Lancang-Mekong Cooperation (Myanmar phase)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_5a1a65a8c41cc0b5ac7f57fef05f29ee.setContent(html_5cf57aaa25fa40404d82f64417600aea);
+            
+        
+
+        circle_marker_78cdf6c8ac7ea522cd8049d74c61681f.bindPopup(popup_5a1a65a8c41cc0b5ac7f57fef05f29ee)
+        ;
+
+        
+    
+    
+            var circle_marker_d51b6bd4ec607b062825b48200f46b43 = L.circleMarker(
+                [4.0125, 103.345],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 42.70435388568378, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_5d61f10f0c2c755020a3ccf318d7c6aa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4dede036ba0dafc098b54a5fde8ce75a = $(`<div id="html_4dede036ba0dafc098b54a5fde8ce75a" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Malaysia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Malaysia-China Kuantan Industrial Park (MCKIP)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Industrial park / twin-park cooperation platform</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Chinese consortium including Guangxi Beibu Gulf International Port Group; Alliance Steel investor group</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> ECERDC / Malaysian consortium; MCKIPSB 51:49 Malaysia-China JV structure reported by official sources</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Steel, chemicals, advanced materials, logistics, equipment manufacturing</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 140000000.0</p> </div>     </div>`)[0];
+                popup_5d61f10f0c2c755020a3ccf318d7c6aa.setContent(html_4dede036ba0dafc098b54a5fde8ce75a);
+            
+        
+
+        circle_marker_d51b6bd4ec607b062825b48200f46b43.bindPopup(popup_5d61f10f0c2c755020a3ccf318d7c6aa)
+        ;
+
+        
+    
+    
+            var circle_marker_22a0fb6b8c6fb985f6bfa1275601d40e = L.circleMarker(
+                [1.559, 103.6975],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_92aa532ff7a8f10da31aa27f0b34e99d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_651ff3ad29ec509b975e9b409fa133fb = $(`<div id="html_651ff3ad29ec509b975e9b409fa133fb" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Malaysia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Johor-Singapore Special Economic Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_92aa532ff7a8f10da31aa27f0b34e99d.setContent(html_651ff3ad29ec509b975e9b409fa133fb);
+            
+        
+
+        circle_marker_22a0fb6b8c6fb985f6bfa1275601d40e.bindPopup(popup_92aa532ff7a8f10da31aa27f0b34e99d)
+        ;
+
+        
+    
+    
+            var circle_marker_46207d9bccecc1dc75ea4cfcaf0b04ed = L.circleMarker(
+                [3.2621, 113.0391],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_1c8d9ddec502a5660358cc6c43f3da4f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_42a24c6f8037bada58029516be3024b2 = $(`<div id="html_42a24c6f8037bada58029516be3024b2" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Malaysia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Tanjung Kidurong Industrial Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_1c8d9ddec502a5660358cc6c43f3da4f.setContent(html_42a24c6f8037bada58029516be3024b2);
+            
+        
+
+        circle_marker_46207d9bccecc1dc75ea4cfcaf0b04ed.bindPopup(popup_1c8d9ddec502a5660358cc6c43f3da4f)
+        ;
+
+        
+    
+    
+            var circle_marker_a7b019dabaf20ee2e503d20f6b680921 = L.circleMarker(
+                [2.8247, 122.1571],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 45.00154144158287, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_63ed68795a080dbe0e005296675b81c4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6d3625b03648a82e6e09cde6ebba2a56 = $(`<div id="html_6d3625b03648a82e6e09cde6ebba2a56" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Indonesia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Indonesia Morowali Industrial Park (IMIP) / Tsingshan Park</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Integrated industrial park / nickel-processing zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Tsingshan / Shanghai Decent; broader ecosystem includes GEM, CATL, Huayou, CMOC and others</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Indonesian partners and local authorities</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Nickel, stainless steel, battery materials, captive power/logistics</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 384000000.0</p> </div>     </div>`)[0];
+                popup_63ed68795a080dbe0e005296675b81c4.setContent(html_6d3625b03648a82e6e09cde6ebba2a56);
+            
+        
+
+        circle_marker_a7b019dabaf20ee2e503d20f6b680921.bindPopup(popup_63ed68795a080dbe0e005296675b81c4)
+        ;
+
+        
+    
+    
+            var circle_marker_db26f090a07b1f639ccbd6a37aa0d581 = L.circleMarker(
+                [0.4783, 127.9836],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_6847164a696941c0646a2e2e9d16821b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0995b6a4dd353003905cab373f0b21ec = $(`<div id="html_0995b6a4dd353003905cab373f0b21ec" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Indonesia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Indonesia Weda Bay Industrial Park (IWIP)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Integrated industrial park / nickel-battery platform</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Tsingshan; Weda Bay Nickel JV with Tsingshan, Eramet, and Antam</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Indonesian state/private partners including Antam-linked participation</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Nickel mining, smelting, battery-material supply chain</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_6847164a696941c0646a2e2e9d16821b.setContent(html_0995b6a4dd353003905cab373f0b21ec);
+            
+        
+
+        circle_marker_db26f090a07b1f639ccbd6a37aa0d581.bindPopup(popup_6847164a696941c0646a2e2e9d16821b)
+        ;
+
+        
+    
+    
+            var circle_marker_dd8a6238c7fb3f3af0ce2f9be354fe53 = L.circleMarker(
+                [6.3571, 107.1722],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_fcaee85259e01b5276d6129cb718d4a5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1f84c9d9e73c7fc5f66724b31f965d2f = $(`<div id="html_1f84c9d9e73c7fc5f66724b31f965d2f" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Indonesia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> China-Indonesia Economic and Trade Cooperation Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Overseas economic & trade cooperation zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Guangxi State Farms / Guangxi-related Chinese investors</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Indonesian industrial estate/local partners</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Machinery, auto parts, agriculture, light manufacturing, building materials</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_fcaee85259e01b5276d6129cb718d4a5.setContent(html_1f84c9d9e73c7fc5f66724b31f965d2f);
+            
+        
+
+        circle_marker_dd8a6238c7fb3f3af0ce2f9be354fe53.bindPopup(popup_fcaee85259e01b5276d6129cb718d4a5)
+        ;
+
+        
+    
+    
+            var circle_marker_bd29a99519573380e917cdd2f49882a9 = L.circleMarker(
+                [1.785, 112.115],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_4e47928ab1227a6ef22a5a458e81e1ca = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0a04b6fc01916c3c9c85e4c1ca912c38 = $(`<div id="html_0a04b6fc01916c3c9c85e4c1ca912c38" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Indonesia</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> China-Indonesia Julong Agricultural Industrial Cooperation Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Agricultural industrial cooperation zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Tianjin Julong Group / Julong-linked companies</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Indonesian agricultural and plantation partners</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Palm oil, agriculture, processing, logistics</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_4e47928ab1227a6ef22a5a458e81e1ca.setContent(html_0a04b6fc01916c3c9c85e4c1ca912c38);
+            
+        
+
+        circle_marker_bd29a99519573380e917cdd2f49882a9.bindPopup(popup_4e47928ab1227a6ef22a5a458e81e1ca)
+        ;
+
+        
+    
+    
+            var circle_marker_982e8f110f180bda0de9963aa9bdb37d = L.circleMarker(
+                [10.4844, 106.3626],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 42.86142974795149, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_a50b2555cbb187f5d55a9f9dc67b2822 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_db42bf0d29840af8530070f0ff92d696 = $(`<div id="html_db42bf0d29840af8530070f0ff92d696" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Vietnam</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Long Jiang Industrial Park</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Industrial park / overseas economic & trade cooperation zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Zhejiang Qianjiang Investment Management / Long Jiang Industrial Park Development</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Vietnamese local authorities and industrial-zone partners</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Electronics, machinery, building materials, food processing, biopharma, light industry</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 150000000.0</p> </div>     </div>`)[0];
+                popup_a50b2555cbb187f5d55a9f9dc67b2822.setContent(html_db42bf0d29840af8530070f0ff92d696);
+            
+        
+
+        circle_marker_982e8f110f180bda0de9963aa9bdb37d.bindPopup(popup_a50b2555cbb187f5d55a9f9dc67b2822)
+        ;
+
+        
+    
+    
+            var circle_marker_8d70b84b26f78b52d952f82d439c4ace = L.circleMarker(
+                [20.8636, 106.6139],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_eb7ad2c9116705f0b1020790f634ec80 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b936099ed792c2f6ab025f5dc84a31db = $(`<div id="html_b936099ed792c2f6ab025f5dc84a31db" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Vietnam</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Shenzhen-Haiphong</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Industrial Zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Shenzhen Shenyue Joint Investment Co.</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Vietnamese local authorities and industrial-zone partners</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Electronics and textiles </p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_eb7ad2c9116705f0b1020790f634ec80.setContent(html_b936099ed792c2f6ab025f5dc84a31db);
+            
+        
+
+        circle_marker_8d70b84b26f78b52d952f82d439c4ace.bindPopup(popup_eb7ad2c9116705f0b1020790f634ec80)
+        ;
+
+        
+    
+    
+            var circle_marker_1ad0c7edda6ba41f2335033a82c1aa19 = L.circleMarker(
+                [13.0122, 101.1961],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_04fb1c9888cdb82ca65eafdc1d885129 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8f1113c825934152a4665311b6362a08 = $(`<div id="html_8f1113c825934152a4665311b6362a08" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Thailand</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Thai-Chinese Rayong Industrial Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Industrial zone / overseas economic & trade cooperation zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Holley / Huali Industrial Group and Thai-Chinese Rayong Industrial Realty Development</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Thai industrial-estate/local partners</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Auto parts, machinery, electronics, building materials, light manufacturing</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_04fb1c9888cdb82ca65eafdc1d885129.setContent(html_8f1113c825934152a4665311b6362a08);
+            
+        
+
+        circle_marker_1ad0c7edda6ba41f2335033a82c1aa19.bindPopup(popup_04fb1c9888cdb82ca65eafdc1d885129)
+        ;
+
+        
+    
+    
+            var circle_marker_76ff6444c6c1ad883a6f4584f594e120 = L.circleMarker(
+                [12.946, 101.1352],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 49.68180440555178, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_63d0b245489e1a16df7996600006788a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_178a04368b6f6108b8a38ac89662800a = $(`<div id="html_178a04368b6f6108b8a38ac89662800a" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Thailand</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> EEC/Rayong Chinese EV factory cluster</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Zone-adjacent industrial investment cluster</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> BYD, Great Wall Motor, Changan, GAC Aion and other Chinese automakers</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Thai EEC / industrial estate authorities; private estate operators</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> EV assembly, batteries, auto components</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 3000000000.0</p> </div>     </div>`)[0];
+                popup_63d0b245489e1a16df7996600006788a.setContent(html_178a04368b6f6108b8a38ac89662800a);
+            
+        
+
+        circle_marker_76ff6444c6c1ad883a6f4584f594e120.bindPopup(popup_63d0b245489e1a16df7996600006788a)
+        ;
+
+        
+    
+    
+            var circle_marker_1e30ca9017b10790df09935f40cd15e0 = L.circleMarker(
+                [13.0116, 101.21],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_d4783e16eb10c5a6cc9b4e2a59752b26 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0aabfa449d2684e26b48907fc5161571 = $(`<div id="html_0aabfa449d2684e26b48907fc5161571" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Thailand</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Lacang-Mekong Cooperation (Thailand phase)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_d4783e16eb10c5a6cc9b4e2a59752b26.setContent(html_0aabfa449d2684e26b48907fc5161571);
+            
+        
+
+        circle_marker_1e30ca9017b10790df09935f40cd15e0.bindPopup(popup_d4783e16eb10c5a6cc9b4e2a59752b26)
+        ;
+
+        
+    
+    
+            var circle_marker_e714d2898cac090b22d5629d703b6010 = L.circleMarker(
+                [5.006, 115.1],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 50.0, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_7483f133bb659ee85480f159f616fa4f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f54b3d9290cd6fc03e242bc11cf637c5 = $(`<div id="html_f54b3d9290cd6fc03e242bc11cf637c5" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Southeast Asia</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Brunei</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Pulau Muara Besar / Hengyi refinery-petrochemical complex</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Industrial island / petrochemical complex</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Zhejiang Hengyi Group; Hengyi Industries</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Brunei government-linked Damai Holdings / local JV partner</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Refining, petrochemicals, aromatics, plastics, power</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 3450000000.0</p> </div>     </div>`)[0];
+                popup_7483f133bb659ee85480f159f616fa4f.setContent(html_f54b3d9290cd6fc03e242bc11cf637c5);
+            
+        
+
+        circle_marker_e714d2898cac090b22d5629d703b6010.bindPopup(popup_7483f133bb659ee85480f159f616fa4f)
+        ;
+
+        
+    
+    
+            var circle_marker_d3b3a3d4a234db8a2e328008e2b9b060 = L.circleMarker(
+                [-7.892, 145.392],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_5c54b6ea1de31b0b86189fbd6ea0fb97 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a7ff2005d2b42a25e76c8bda3f42a70b = $(`<div id="html_a7ff2005d2b42a25e76c8bda3f42a70b" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Ihu Special Economic Zone (ISEZ)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> SEZ / industrial township / infrastructure platform</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Under construction</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> China Aid / Chinese state-linked funding reported; investor/operator structure still developing</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> PNG government, Kikori District Development Authority, ISEZ Authority/Project Office</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Infrastructure, logistics, roads/bridges, ports/jetties, airstrips, industrial township, utilities</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_5c54b6ea1de31b0b86189fbd6ea0fb97.setContent(html_a7ff2005d2b42a25e76c8bda3f42a70b);
+            
+        
+
+        circle_marker_d3b3a3d4a234db8a2e328008e2b9b060.bindPopup(popup_5c54b6ea1de31b0b86189fbd6ea0fb97)
+        ;
+
+        
+    
+    
+            var circle_marker_7492aeedeab58ac6fe6d687b3da28ad2 = L.circleMarker(
+                [-6.315, 155.495],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_c33d5dda634dcf22303773c132627f75 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2e331fbc2a569b415a6b222694afeff3 = $(`<div id="html_2e331fbc2a569b415a6b222694afeff3" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Panguna mine China proposal watchlist</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Resource-zone adjacent watchlist item, not a SEZ</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Proposed / watchlist</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> CMOC proposal rejected, per Reuters</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Bougainville Copper / Bougainville government</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Copper-gold mining; possible future infrastructure/industrial-zone implications</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_c33d5dda634dcf22303773c132627f75.setContent(html_2e331fbc2a569b415a6b222694afeff3);
+            
+        
+
+        circle_marker_7492aeedeab58ac6fe6d687b3da28ad2.bindPopup(popup_c33d5dda634dcf22303773c132627f75)
+        ;
+
+        
+    
+    
+            var circle_marker_009458e517a96da935fb88216f797bec = L.circleMarker(
+                [-5.272, 144.537],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 46.64026527117396, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_bd6a2ff92e6d4e1c53155bbc895f3cf3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_85d26e48b8d72c4e856b7ebd3aadac9d = $(`<div id="html_85d26e48b8d72c4e856b7ebd3aadac9d" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Middle Ramu Industrial Zone/ SEZ </p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Agriculture, Nickel-Cobalt</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Operational / expanding</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Eximbank (China)</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> Madang Province in PNG, includes the Industrial Zone, Pacific Marine Zone and Agriculture zone</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Agriculture, nickel-cobalt mining</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 788729807.0</p> </div>     </div>`)[0];
+                popup_bd6a2ff92e6d4e1c53155bbc895f3cf3.setContent(html_85d26e48b8d72c4e856b7ebd3aadac9d);
+            
+        
+
+        circle_marker_009458e517a96da935fb88216f797bec.bindPopup(popup_bd6a2ff92e6d4e1c53155bbc895f3cf3)
+        ;
+
+        
+    
+    
+            var circle_marker_64f0a677df3da4e645f3a9061af2164c = L.circleMarker(
+                [-2.68372, 141.30195],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.579967154270367, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_f454f125d303d4a6cad0eea5620614d0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_dc8747dddaddb2ab359001bbf12f71ff = $(`<div id="html_dc8747dddaddb2ab359001bbf12f71ff" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Vanimo Free Trade Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Logistics, major manufacturers, unclear decriptions</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Proposed / watchlist</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Vanimo-Green District Development Authority | Injected cash </p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> PNG Vanimo, shared border with Indonesia</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Unclear </p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 681276.26</p> </div>     </div>`)[0];
+                popup_f454f125d303d4a6cad0eea5620614d0.setContent(html_dc8747dddaddb2ab359001bbf12f71ff);
+            
+        
+
+        circle_marker_64f0a677df3da4e645f3a9061af2164c.bindPopup(popup_f454f125d303d4a6cad0eea5620614d0)
+        ;
+
+        
+    
+    
+            var circle_marker_8d9fba91ccb209b76c8ce03f3e7773b8 = L.circleMarker(
+                [-5.07564, 145.78939],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 42.95072342723713, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_61c120c1d83e53eaf4ddba87447da994 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b76e5febb2c63b3d265a7c59e8247b53 = $(`<div id="html_b76e5febb2c63b3d265a7c59e8247b53" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Pacific Marine Industrial Zone (PMIZ)</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Marine zone to create tuna resources, storage, and export zone</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> Planned / stalled</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> Department of Commerce and Industry, Shenyang international Economica and Technical Cooperation Company </p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> PNG Madang Province</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> Fisheries </p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 156000000.0</p> </div>     </div>`)[0];
+                popup_61c120c1d83e53eaf4ddba87447da994.setContent(html_b76e5febb2c63b3d265a7c59e8247b53);
+            
+        
+
+        circle_marker_8d9fba91ccb209b76c8ce03f3e7773b8.bindPopup(popup_61c120c1d83e53eaf4ddba87447da994)
+        ;
+
+        
+    
+    
+            var circle_marker_93fa6c0bec98903888dce451613df59c = L.circleMarker(
+                [-7.7556, 147.588],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_5a094c74281764a00c907c120c7d4f38 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bf2d575025c2d8251efdb0f2241ce198 = $(`<div id="html_bf2d575025c2d8251efdb0f2241ce198" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Lae/Morobe logistics and port industrial infrastructure </p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> Marine port </p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_5a094c74281764a00c907c120c7d4f38.setContent(html_bf2d575025c2d8251efdb0f2241ce198);
+            
+        
+
+        circle_marker_93fa6c0bec98903888dce451613df59c.bindPopup(popup_5a094c74281764a00c907c120c7d4f38)
+        ;
+
+        
+    
+    
+            var circle_marker_72169baa0a3405f53e8e018138f1e3a5 = L.circleMarker(
+                [-6.0792, 145.4056],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_b2c9884a4e4119b1f9a7e479401b9dfc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_cb4155eaf88a44b9c8a1257f7e86dd5e = $(`<div id="html_cb4155eaf88a44b9c8a1257f7e86dd5e" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Eastern: Goruka Agro-Industrial Park</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_b2c9884a4e4119b1f9a7e479401b9dfc.setContent(html_cb4155eaf88a44b9c8a1257f7e86dd5e);
+            
+        
+
+        circle_marker_72169baa0a3405f53e8e018138f1e3a5.bindPopup(popup_b2c9884a4e4119b1f9a7e479401b9dfc)
+        ;
+
+        
+    
+    
+            var circle_marker_2123b3303c9eaa5c54709fa86f7b7b97 = L.circleMarker(
+                [-6.3353, 145.9031],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_52ca275311f51bdec085e9a23ba18c4e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_524876a1b3de81e4207afac7e8e5a44b = $(`<div id="html_524876a1b3de81e4207afac7e8e5a44b" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Eastern: Aiyura Agricultural Research Station</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_52ca275311f51bdec085e9a23ba18c4e.setContent(html_524876a1b3de81e4207afac7e8e5a44b);
+            
+        
+
+        circle_marker_2123b3303c9eaa5c54709fa86f7b7b97.bindPopup(popup_52ca275311f51bdec085e9a23ba18c4e)
+        ;
+
+        
+    
+    
+            var circle_marker_946c69a4e1c8a4c3ca4361d7b9b915f8 = L.circleMarker(
+                [-5.8458, 144.3012],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_ec53c49b86d8cd33e47a3c190b94123a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9eff85081afb96d6b4a2bc6124cdd14a = $(`<div id="html_9eff85081afb96d6b4a2bc6124cdd14a" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Western: Highlands Agro-Industrial Centre</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_ec53c49b86d8cd33e47a3c190b94123a.setContent(html_9eff85081afb96d6b4a2bc6124cdd14a);
+            
+        
+
+        circle_marker_946c69a4e1c8a4c3ca4361d7b9b915f8.bindPopup(popup_ec53c49b86d8cd33e47a3c190b94123a)
+        ;
+
+        
+    
+    
+            var circle_marker_4cf1e5fbb4d4e2f915c1955f9d36a482 = L.circleMarker(
+                [-5.7836, 144.3317],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_b86b4e0b984e10772fcc47856c081319 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_14c1eb461bf619c531bea030066c5a8b = $(`<div id="html_14c1eb461bf619c531bea030066c5a8b" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Western: Kuk Swamp</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_b86b4e0b984e10772fcc47856c081319.setContent(html_14c1eb461bf619c531bea030066c5a8b);
+            
+        
+
+        circle_marker_4cf1e5fbb4d4e2f915c1955f9d36a482.bindPopup(popup_b86b4e0b984e10772fcc47856c081319)
+        ;
+
+        
+    
+    
+            var circle_marker_4572560e387fa50761a9cca65728e3fd = L.circleMarker(
+                [-2.083, 147.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_512b5cff8e41346c44109c5126abb8f8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_aabdf1292bc8ae7d5be8017b505c79db = $(`<div id="html_aabdf1292bc8ae7d5be8017b505c79db" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Manus Free Trade Zone: Manus Province</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_512b5cff8e41346c44109c5126abb8f8.setContent(html_aabdf1292bc8ae7d5be8017b505c79db);
+            
+        
+
+        circle_marker_4572560e387fa50761a9cca65728e3fd.bindPopup(popup_512b5cff8e41346c44109c5126abb8f8)
+        ;
+
+        
+    
+    
+            var circle_marker_ae035792d90e3cd61376c02a601664d3 = L.circleMarker(
+                [-4.343673, 152.2687],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_fdb4c8774546dd01d1a22b1e493c67ed = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_49016fa05fab769acde9c0756484f298 = $(`<div id="html_49016fa05fab769acde9c0756484f298" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Kokopo Tourism Zone </p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_fdb4c8774546dd01d1a22b1e493c67ed.setContent(html_49016fa05fab769acde9c0756484f298);
+            
+        
+
+        circle_marker_ae035792d90e3cd61376c02a601664d3.bindPopup(popup_fdb4c8774546dd01d1a22b1e493c67ed)
+        ;
+
+        
+    
+    
+            var circle_marker_55b79a25ed5611634674e7ff28044f67 = L.circleMarker(
+                [-9.44, 147.12],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_96681e611b657b9edccde99722a8fd90 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c3d02373267316aa1707b6a2ca52909b = $(`<div id="html_c3d02373267316aa1707b6a2ca52909b" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Port Moresby Zones</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_96681e611b657b9edccde99722a8fd90.setContent(html_c3d02373267316aa1707b6a2ca52909b);
+            
+        
+
+        circle_marker_55b79a25ed5611634674e7ff28044f67.bindPopup(popup_96681e611b657b9edccde99722a8fd90)
+        ;
+
+        
+    
+    
+            var circle_marker_511b663082d661753c56bf8370d9a65d = L.circleMarker(
+                [-5.499, 145.434],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_f4e06d207f16aa723ed54e9f93458ac2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c2ec6a24fb1d8976b8f3969499acaf1c = $(`<div id="html_c2ec6a24fb1d8976b8f3969499acaf1c" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Usino Bundi Agriculture Zone</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_f4e06d207f16aa723ed54e9f93458ac2.setContent(html_c2ec6a24fb1d8976b8f3969499acaf1c);
+            
+        
+
+        circle_marker_511b663082d661753c56bf8370d9a65d.bindPopup(popup_f4e06d207f16aa723ed54e9f93458ac2)
+        ;
+
+        
+    
+    
+            var circle_marker_947d0f8db96a81e6db8aaf4b097e7449 = L.circleMarker(
+                [-3.8821, 143.6734],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_bed3427b8c4e48ac650a0fb88146a2b0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fc779ff7ef48ebc21a0a4d258ac62a8a = $(`<div id="html_fc779ff7ef48ebc21a0a4d258ac62a8a" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Papua New Guinea</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Sepik Plains</p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_bed3427b8c4e48ac650a0fb88146a2b0.setContent(html_fc779ff7ef48ebc21a0a4d258ac62a8a);
+            
+        
+
+        circle_marker_947d0f8db96a81e6db8aaf4b097e7449.bindPopup(popup_bed3427b8c4e48ac650a0fb88146a2b0)
+        ;
+
+        
+    
+    
+            var circle_marker_e6dbc488b6524c5d58f77be6bb776718 = L.circleMarker(
+                [-9.10206, 160.14704],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "sky blue", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_daeefebaaa87394685fbfc44c4bd500e);
+        
+    
+        var popup_38d28f03f0489c61b17188eba57d11da = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_12894f59574dbf65859b877762f2fb47 = $(`<div id="html_12894f59574dbf65859b877762f2fb47" style="width: 100.0%; height: 100.0%;"> <div style="font-family: Arial, sans-serif; font-size: 12px; padding: 5px; background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px;">     <h4 style="margin-bottom: 10px; color: #0056b3; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 8px;">Investment Details</h4>     <p style="margin-bottom: 3px;"><strong>Region:</strong> Pacific Islands</p>     <p style="margin-bottom: 3px;"><strong>Country:</strong> Solomon Islands</p>     <p style="margin-bottom: 3px;"><strong>Zone:</strong> Tulagi Islands </p>     <p style="margin-bottom: 3px;"><strong>Type:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Status:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sponsor:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Host:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Sector:</strong> nan</p>     <p style="margin-bottom: 3px;"><strong>Investment:</strong> 0.0</p> </div>     </div>`)[0];
+                popup_38d28f03f0489c61b17188eba57d11da.setContent(html_12894f59574dbf65859b877762f2fb47);
+            
+        
+
+        circle_marker_e6dbc488b6524c5d58f77be6bb776718.bindPopup(popup_38d28f03f0489c61b17188eba57d11da)
+        ;
+
+        
+    
+</script>
+</html>
